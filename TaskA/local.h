@@ -10,7 +10,13 @@ PRETTY_DEFAULT_DECORATION(std::vector<T>, "[", ", ", "]", class T)
 PRETTY_DEFAULT_DECORATION(std::deque<T>, "[", ", ", "]", class T)
 PRETTY_DEFAULT_DECORATION(std::set<T>, "{", ", ", "}", class T)
 PRETTY_DEFAULT_DECORATION(std::unordered_set<T>, "{", ", ", "}", class T)
-// TODO: Decorate maps.
+#define PP_COMMA ,
+PRETTY_DEFAULT_DECORATION(std::map<K PP_COMMA V>, "{", ", ", "}",
+                          class K, class V)
+PRETTY_DEFAULT_DECORATION(std::unordered_map<K PP_COMMA V>, "{", ", ", "}",
+                          class K, class V)
+PRETTY_DEFAULT_DECORATION(std::pair<Fst PP_COMMA Snd>, "(", ", ", ")",
+                          class Fst, class Snd)
 
 #define PRINT(x) \
   std::cout << "  "#x": " << (x) << std::endl; \
