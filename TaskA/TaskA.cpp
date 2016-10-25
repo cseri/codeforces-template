@@ -55,9 +55,6 @@ struct Task {
     //freopen((filePrefix + ".err").c_str(), "w", stderr);
 #endif
 
-    cin.sync_with_stdio(false);
-    cout.sync_with_stdio(false);
-
     ll n = -1;
     cin >> n;
     PRINT(n);
@@ -90,6 +87,8 @@ int solve(std::string s) {
 }
 
 int main(int argc, char* argv[]) {
+  ios_base::sync_with_stdio(false);
+
   int ret = 0;
 
 #ifndef ONLINE_JUDGE
