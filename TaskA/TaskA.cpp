@@ -36,7 +36,6 @@ typedef long long ll;
 using namespace std;
 
 #ifndef ONLINE_JUDGE
-int solve(std::string s);
 #include "local.h"
 #else
 #define PRINT(x)
@@ -88,16 +87,7 @@ int solve(std::string s) {
 
 int main(int argc, char* argv[]) {
   ios_base::sync_with_stdio(false);
-
-  int ret = 0;
-
-#ifndef ONLINE_JUDGE
-  ret = local_main(argc, argv);
-#else // ONLINE_JUDGE
-  ret = solve("");
-#endif // ONLINE_JUDGE
-
-  return ret;
+  return solve("");
 }
 
 #pragma endregion

@@ -34,6 +34,8 @@ bool is_file_exist(string fileName) {
   return static_cast<bool>(infile);
 }
 
+int solve(std::string s);
+
 int solve_fncheck(string fileName) {
   if (!is_file_exist(fileName + ".txt")) {
     cerr << "File " << fileName.c_str() << ".txt does not extits." << endl;
@@ -43,7 +45,7 @@ int solve_fncheck(string fileName) {
   return solve(fileName);
 }
 
-int local_main(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
   int ret = 0;
 
   if (GetAsyncKeyState(VK_LCONTROL) < 0) {
@@ -66,3 +68,5 @@ int local_main(int argc, char* argv[]) {
 
   return ret;
 }
+
+#define main local_main
